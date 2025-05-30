@@ -7,8 +7,7 @@
       ansible.builtin.copy:
         dest: /tmp/ejemplo.txt
         content: "Este es un archivo de ejemplo creado por Ansible en Github Actions."
-        permissions: '0644'
-        state: present
+        mode: '0644'
     - name: Mostrar mensaje por pantalla
       ansible.builtin.debug:
         msg: "El archivo de ejemplo ha sido creado correctamente."
