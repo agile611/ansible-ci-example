@@ -12,9 +12,6 @@
     - name: Mostrar mensaje por pantalla
       ansible.builtin.debug:
         msg: "El archivo de ejemplo ha sido creado correctamente."
-    - name: Mostrar el contenido del archivo
-      ansible.builtin.command: cat /tmp/ejemplo.txt
-      register: output
     - name: Imprimir el contenido del archivo en la salida
       ansible.builtin.debug:
         msg: "{{ output.stdout }}"
