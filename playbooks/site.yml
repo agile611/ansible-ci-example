@@ -1,17 +1,18 @@
 ---
 - name: Playbook para Github Actions
   hosts: localhost
-  gather_facts: no
+  gather_facts: false
   tasks:
     - name: Crear un archivo de ejemplo
       ansible.builtin.copy:
         dest: /tmp/ejemplo.txt
         content: "Este es un archivo de ejemplo creado por Ansible en Github Actions."
+        permissions: '0644'
     - name: Mostrar mensaje por pantalla
       ansible.builtin.debug:
         msg: "El archivo de ejemplo ha sido creado correctamente."
     - name: Mostrar el contenido del archivo
-      command: cat /tmp/ejemplo.txt
+      ansible.builtin.command: cat /tmp/ejemplo.txt
       register: output
     - name: Imprimir el contenido del archivo en la salida
       ansible.builtin.debug:
