@@ -8,6 +8,7 @@
         dest: /tmp/ejemplo.txt
         content: "Este es un archivo de ejemplo creado por Ansible en Github Actions."
         mode: '0644'
+      register: output
     - name: Mostrar mensaje por pantalla
       ansible.builtin.debug:
         msg: "El archivo de ejemplo ha sido creado correctamente."
